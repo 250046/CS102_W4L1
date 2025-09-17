@@ -1,314 +1,198 @@
-#include <iostream> // for output-input
-#include <iomanip>
-#include <string>
+#include <iostream>
 #include <cmath>
-#include <math.h>
 
-using namespace std; // cout, cin, vector - these are inside and we write it in order to avoid writing it twice.
+using namespace std;
 
-int main() {
-    // Task - 1
-
-    int intNumber = 18;
-    float floatNumber = 3.14159;
-    double doubleNumber = 45.1234;
-    bool boolean = true;
-    char charName = 'A';
-    cout << "The intNumber is " << intNumber << ", size is " << sizeof(intNumber) << endl;
-    cout << "The floatNumber is " << floatNumber << ", size is " << sizeof(floatNumber) << endl;
-    cout << "The doubleNumber is " << doubleNumber << ", size is " << sizeof(doubleNumber) << endl;
-    cout << "The boolean is " << boolean << ", size is " << sizeof(boolean) << endl;
-    cout << "The charName is " << charName << ", size is " << sizeof(charName) << endl;
-    return 0;
-
-    // Task - 2
-    string myName = "Asadbek Abdukhalilov";
-    int myID = 233242;
-    string favSong = "It was a good day - Ice Qube";
-    string favMovie = "Avatar:2";
-
-    cout << myName << endl;
-    cout << myID << endl;
-    cout << favSong << endl;
-    cout << favMovie << endl;
-    return 0;
-
-    // Task - 3
-    cout << "\"I'm standing\" on the edge of some crazy cliff." << endl;
-    cout << "What I have to do, I have to catch everybody\\" << endl;
-    cout << " if they start to go over the cliff—I mean \\" << endl;
-    cout << "\t\\if they're running and they don't look" << endl;
-    cout << "\twhere they're going I have to come out" << endl;
-    cout << "\tfrom somewhere and     catch them." << endl;
-    return 0;
-
-    // Task - 4
-    int a = 13;
-    char b = 'R';
-    float process1 = a / 3.0f;
-    cout << fixed << setprecision(1) << process1 << endl;
-    cout << (int)b << endl;
-    cout << (((a + (int)b)/5)) << endl;
-    cout << char((int)b + (a/10-1)) << endl;
-    return 0;
-
-    // Task - 5
-    int a = 44;
-    int b = 12;
-    cout << "Sum = " << a + b << endl;
-    cout << "Product = " << a * b << endl;
-    return 0
-
-    // Task - 6
-    int value1;
-    int value2;
-
-    cout << "Enter first value: ";
-    cin >> value1;
-
-    cout << "Enter second value: ";
-    cin >> value2;
-
-    int sum = value1 + value2;
-    cout << "Sum: " << value1 << " + " << value2 << " = " << sum << endl;
-    return 0;
-
-    // Task 7
-    int x;
-    cin >> x;
-    int y;
-    cin >> y;
-    float t = (3*((x*x)+3))/((y/4)+3);
-    cout << "t = " << t << endl;
-    return 0;
-
-    // Task 8
-    /*
+int main()
+{
+    // Problem - 1
     
-    Area of sphere is found with formula: A = π * r^2
+    // int x;
+    // cin >> x;
+    // if (x>0)
+    // {
+    //     cout << "Positive" << endl;
+    // } else if (x == 0)
+    // {
+    //     cout << "It is ZERO" << endl;
+    // } else
+    // {
+    //     cout << "Negative" << endl;
+    // }
+    // return 0;
 
-     */
-    float diameter;
-    float pii = 3.14;
-    cout << "Enter a diameter: " << endl;
-    cin >> diameter;
+    // Problem - 2
+    // int x;
+    // cin >> x;
+    // if ((x>0) && (x % 2 == 0))
+    // {
+    //     cout << "The number is positive and even" << endl;
+    // } else if ((x>0) && (x % 2 != 0)) {
+    //     cout << "The number is positive, but odd" << endl;
+    // } else if ((x < 0) && (x%2 == 0)) {
+    //     cout << "The number is negative and even" << endl;
+    // } else if (( x < 0) && (x%2 !=0 )) {
+    //     cout << "The number is negative, but odd" << endl;
+    // }
+    // return 0;
 
-    float result =  4 * pii * pow((diameter/2),2);
+    // Problem - 3
 
-    cout << "The result is: " << result << endl;
-    return 0;
-
-    // // Task 9
-    float v1;
-    cout << "Enter starting velocity value: " << endl;
-    cin >> v1;
-    float v2;
-    cout << "Enter ending velocity value: " << endl;
-    cin >> v2;
-    float time;
-    cout << "Enter time span in seconds: " << endl;
-    cin >> time;
-
-    float result = (v2 - v1)/(time);
-
-    cout << "Average accelartion is " << result << endl;
-    return 0;
-
-    // Task 10
-    float distance;
-    cin >> distance;
-    float fuel;
-    cin >> fuel;
-    float price;
-    cin >> price;
-
-    float cost = (distance/fuel)*price;
-    cout << "The cost of driving is $" << cost << endl;
-    return 0;
-
-    // Task 11
-    double value1;
-    cin >> value1;
-    double value2;
-    cin >> value2;
-
-    cout << value1 << " " << value2 << endl;
-    return 0;
-
-    // Task 12
-    int total_students;
-    cout << "Enter total: " << endl;
-    cin >> total_students;
-    int groups = 11;
-    int first_group = total_students / groups;
-    int last_group = total_students % groups;
-    cout << "In first gorup: " << first_group << endl;
-    cout << "In last group: " << last_group << endl;
-    return 0;
-
-    // Task 13
-    float side;
-    cout << "Enter side of hexagon: " << endl;
-    cin >> side;
-    float area_h = ((3 * sqrt(3))/2)*(pow(side, 2));
-    cout << "Area of hexagon: " << area_h << endl;
-    return 0;
-
-    // Task 14
-    int num;
-    cout << "Enter a number: " << endl;
-    cin >> num;
-    num = num + 1;
-    num = num * 3;
-    num = num - 14;
-    num = num / 4;
-    num = num - 1;
-    num = num % 9;
-    cout << num << endl;
-    return 0;
-
-    // Task 15
-    char charName = 'A';
+    // int a, b, c;
+    // cin >> a >> b >> c;
     
-    int H_char = (int)charName + 7;
-    char h_ch = char(H_char);
+    // if ((a > b) and (a > c)){
+    //     cout << a << " is largest" << endl;
+    // }
+    // if ((b > a) and (b > c)){
+    //     cout << b << " is largest" << endl;
+    // }
+    // if ((c > b) and (c > a)){
+    //     cout << c << " is largest" << endl;
+    // }
+
+
+    // Problem 4
+    // int a, b;
+    // cin >> a >> b;
+
+    // if ( a % b == 0){
+    //     cout << a << " is divisible by " << b << endl;
+    // } else {
+    //     cout << a << " is not divisible by " << b << endl;
+    // }
+    // return 0;
+
+    // Problem 5
+    // int year;
+    // cout << "Enter a year: " << endl;
+    // cin >> year;
+
+    // if (year % 4 == 0) {
+    //     if (year % 100 == 0) {
+    //         if (year % 400 == 0) {
+    //             cout << "It is a leap year" << endl;
+    //         } else {
+    //             cout << "It is not a leap year" << endl;
+    //         }
+    //     } else {
+    //         cout << "It is not a leap year" << endl;
+    //     }
+    // } else {
+    //     cout << "It is not a leap year" << endl;
+    // }
+
+    // return 0;
     
-    char E_char = (int)charName + 4;
-    char e_ch = char(E_char);
+    // Problem 6
+    // float a, b, c;
+    // cin >> a >> b >> c;
 
-    char L_char = (int)charName + 11;
-    char l_ch = char(L_char);
+    // float discr = (b*b) - 4 * a * c;
+    // float x1 = (-b + pow(discr, 0.5))/(2*a);
+    // float x2 = (-b - pow(discr, 0.5))/(2*a);
 
-    char O_char = (int)charName + 14;
-    char o_ch = char(O_char);
+    // cout << "x1=" << x1 << endl;
+    // cout << "x2=" << x2 << endl;
 
-    char sign_char = (int)charName - 32;
-    char sign_ch = char(sign_char);
-    cout << h_ch << e_ch << l_ch << l_ch << o_ch << sign_ch << endl;
+    // return 0;
 
-    // Task 16
-    float z;
-    float x = 17.0;
-    z = ((x) + (++x)) / ( 3.0 * 2.0 );
-    cout << fixed << setprecision(2) << z << endl;
-    return 0;
+    
+    // Problem 7
+    // int a, b, c;
+    // cout << "a: " << endl;
+    // cin >> a;
+    // cout << "b: " << endl;
+    // cin >> b;
+    // cout << "c: " << endl;
+    // cin >> c;
 
-    // Task 17
-    int first_num;
-    int second_num;
-    cout << "Enter first number: " << endl;
-    cin >> first_num;
-    cout << "Enter second number " << endl;    
-    cin >> second_num;
+    // if ((a+b>c) and (a+c>b) and (b+c>a)) {
+    //     cout << "Triangle can be formed" << endl;
+    // } else {
+    //     cout << "Trianlge cannot be formed" << endl;
+    // }
 
-    if (first_num == second_num) {
-        cout << 1;
-    } else {
-        cout << 0;
-    }
-    return 0;
+    // return 0;
 
-    // Task 18
-    int a;
-    int b;
-    cout << "Enter 'a' value: " << endl;
-    cin >> a;
-    cout << "Enter 'b' value: " << endl;
-    cin >> b;
+    // Problem 8
+    // char firstChar;
+    // cout << "Enter a character: ";
+    // cin >> firstChar;
+    // if ((isupper(firstChar)) and isalpha(firstChar)) {
+    //     cout << "It is uppercase and alphabetic" << endl;
+    // }
+    // if ((islower(firstChar)) and isalpha(firstChar)) {
+    //     cout << "It is lowercase and alphabetic" << endl;
+    // }
+    // if (isalpha(firstChar) == false) {
+    //     cout << "It is not alphabetic" << endl;
+    // }
+    // return 0;
 
-    if (a < b) {
-        cout << 1 << endl;
-    } else {
-        cout << 0 << endl;
-    }
-    return 0;
+    // Problem 9
+    // int speed;
+    // cout << "Enter a speed: " << endl;
+    // cin >> speed;
 
-    // Task 19
-    int a;
-    int b;
-    int c;
+    // if (speed < 20) {
+    //     cout << "Too slow" << endl;
+    // } else if (speed > 80) {
+    //     cout << "Too fast" << endl;
+    // } else {
+    //     cout << "Just right" << endl;
+    // }
 
-    cout << "Enter 'a' value: " << endl;
-    cin >> a;
-    cout << "Enter 'b' value: " << endl;
-    cin >> b;
-    cout << "Enter 'c' value: " << endl;
-    cin >> c;
+    // return 0;
 
-    cout << ((a>b)&&(a>c)) << endl;
-    return 0;
+    // Problem 10
+    // float x1 = 0;
+    // float y1 = 0;
+    // float x2, y2;
+    // cin >> x2 >> y2;
 
-    // Task 20
-    int one;
-    int two;
-    int three;
-    int four;
-    int five;
+    // float distance = (pow(((pow((x2 - x1),2)) + (pow((y2 - y1),2))),0.5));
 
-    cout << "Enter first value: " << endl;
-    cin >> one;
-    cout << "Enter second value: " << endl;
-    cin >> two;
-    cout << "Enter third value: " << endl;
-    cin >> three;
-    cout << "Enter fourth value: " << endl;
-    cin >> four;
-    cout << "Enter fifth value: " << endl;
-    cin >> five;
+    // if (distance < 10) {
+    //     cout << "The point is within a circle" << endl;
+    // } else if (distance = 0) {
+    //     cout << "The point is within a circle" << endl;
+    // } else {
+    //     cout << "The point is not within a circle" << endl;
+    // }
 
-    if ((one>=0) || (two>=0) || (three>=0) || (four>=0) || (five>=0)) {
-        cout << 1 << endl;
-    } else {
-        cout << 0 << endl;
-    }
-    return 0;
-
-    // Task 21
-    int num1;
-    int num2;
-
-    cout << "Enter first number: " << endl;
-    cin >> num1;
-    cout << "Enter second number: " << endl;
-    cin >> num2;
-
-    if (((num1+num2)>30) && ((num1*num2)>30)) {
-        cout << 1 << endl;
-    } else {
-        cout << 0 << endl;
-    }
-
-    if ((num1+(num2-10))>30) {
-        cout << 1 << endl;
-    } else {
-        cout << 0 << endl;
-    }
-
-    if ((num1>30) || (num2>30)) {
-        cout << 1 << endl;
-    } else {
-        cout << 0 << endl;
-    }
-    return 0;
-
-    // Task 22
-    float sardor;
-    float mike;
-
-    cout << "Sardor's height in cm: " << endl;
-    cin >> sardor;
-    cout << "Mike's height in ft: " << endl;
-    cin >> mike;
-
-    float mike_converted = mike * 30.48;
-
-    if (mike_converted > sardor) {
-        cout << 1 << endl;
-    } else {
-        cout << 0 << endl;
-    }
-    return 0;
- }   
+    // return 0;
 
 
- // ASADBEK ABDUXALILOV - 250046 - FCS01
+    // Problem 11
+    // float weight;
+    // float price;
+
+    // float weight2;
+    // float price2;
+
+    // // Package 1
+    // cout << "[p1] Enter a weight: " << endl;
+    // cin >> weight;
+    // cout << "[p1] Enter a price: " << endl;
+    // cin >> price;
+
+    // // Package 2
+    // cout << "[p2] Enter a weight: " << endl;
+    // cin >> weight2;
+    // cout << "[p2] Enter a price: " << endl;
+    // cin >> price2;
+
+    // double pack1 = weight / price;
+    // double pack2 = weight2 / price2;
+
+    // if (pack1 > pack2) {
+    //     cout << "Package 1 is cheaper" << endl;
+    // } else if (pack1 < pack2) {
+    //     cout << "Package 2 is cheaper" << endl;
+    // } else {
+    //     cout << "Both packages have the same prices" << endl;
+    // }
+
+    // return 0;
+}
