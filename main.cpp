@@ -1,5 +1,8 @@
 #include <iostream>
 #include <cmath>
+#include <string>
+#include <vector>
+
 
 using namespace std;
 
@@ -195,4 +198,88 @@ int main()
     // }
 
     // return 0;
+
+    // Problem 12
+    // int num;
+    // cout << "Enter 3-digit number: " << endl;
+    // cin >> num;
+    // string reversed = "";
+    // string num_str = to_string(num);
+
+    // reversed += num_str[2];
+    // reversed += num_str[1];
+    // reversed += num_str[0];
+
+    // if (num_str == reversed) {
+    //     cout << "It is a palindrom number" << endl;
+    // } else {
+    //     cout << "it is not a palindrom number" << endl;
+    // }
+    // return 0;
+
+    // Problem 13
+
+    // char user_input;
+
+    // cout << "Enter a command ('g' OR 'y' OR 'r'): " << endl;
+    // cin >> user_input;
+
+    // if (user_input == 'g') {
+    //     cout << "Go!" << endl;
+    // } else if (user_input == 'y') {
+    //     cout << "Get ready!" << endl;
+    // } else if (user_input == 'r') {
+    //     cout << "Stop!" << endl;
+    // } else {
+    //     cout << "You didn't enter any available commands. Program stopped. Please re-run" << endl;
+    // }
+
+    // return 0;
+
+    // Problem 14
+    // vector<string> weekdays = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+    // int day_request;
+    // cout << "Enter day number of week: " << endl;
+    // cin >> day_request;
+    
+    // int daynum = day_request - 1;
+
+    // if (daynum > 6) {
+    //     cout << "There is no such a day" << endl;
+    // } else {
+    //     cout << weekdays[daynum] << endl;
+    // }
+    // return 0;
+
+    // Problem 15
+    vector<string> weekdays = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+    
+    int day_request;
+    int future;
+    
+    cout << "Enter current day number of week: " << endl;
+    cin >> day_request;
+    cout << "Enter future date elapsed from today: " << endl;
+    cin >> future;
+    
+    int daynum = day_request - 1;
+    int futnum = (day_request - 1) + future;
+
+    cout << "Current day is: " << weekdays[daynum] << endl;
+    cout << "Future day is: " << weekdays[futnum%7] << endl;
+
+    return 0;
+    
+    // Problem 16
+    int student_grade;
+    cout << "Enter your grade: " << endl;
+    cin >> student_grade;
+
+    switch(student_grade) {
+        case 90 <= student_grade  100:
+            cout << "A" << endl;
+            break;
+    }
+
+    return;
 }
