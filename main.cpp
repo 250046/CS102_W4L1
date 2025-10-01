@@ -1,491 +1,514 @@
 #include <iostream>
 #include <cmath>
-#include <string>
-#include <vector>
-
+#include <cstdlib> // for rand()
+#include <ctime>
 
 using namespace std;
 
-int main()
-{
-    // Problem - 1
+int main() {
+    
+    // Project - 1
     
     int x;
     cin >> x;
-    if (x>0)
-    {
+
+    if ((x>0) || (x==0)) {
         cout << "Positive" << endl;
-    } else if (x == 0)
-    {
-        cout << "It is ZERO" << endl;
-    } else
-    {
+    } else if (x<0) {
         cout << "Negative" << endl;
     }
     return 0;
 
-    // Problem - 2
+    // Project - 2
+
     int x;
     cin >> x;
-    if ((x>0) && (x % 2 == 0))
-    {
-        cout << "The number is positive and even" << endl;
-    } else if ((x>0) && (x % 2 != 0)) {
-        cout << "The number is positive, but odd" << endl;
-    } else if ((x < 0) && (x%2 == 0)) {
-        cout << "The number is negative and even" << endl;
-    } else if (( x < 0) && (x%2 !=0 )) {
-        cout << "The number is negative, but odd" << endl;
+    if ((x>0) && (x%2==0)) {
+        cout << "Positive and even" << endl;
+    } else if ((x<0) && (x%2==0)) {
+        cout << "Negative and even" << endl;
+    } else if ((x>0) || (x==0) && (x%2!=0)) {
+        cout << "Positive and odd" << endl;
+    } else if ((x<0) && (x%2!=0)) {
+        cout << "Negative and odd" << endl;
+    } else {
+        cout << "This is Zero" << endl;
     }
     return 0;
 
-    // Problem - 3
-
+    // Project - 3
     int a, b, c;
     cin >> a >> b >> c;
-    
-    if ((a > b) and (a > c)){
-        cout << a << " is largest" << endl;
-    }
-    if ((b > a) and (b > c)){
-        cout << b << " is largest" << endl;
-    }
-    if ((c > b) and (c > a)){
-        cout << c << " is largest" << endl;
+
+    int largest;
+
+    if ((a>b) && (a>c)) {
+        largest = a;
+        cout << "Largest is " << largest << endl;
+    } else if ((b>a) && (b>c)) {
+        largest = b;
+        cout << "Largest is " << largest << endl;
+    } else if ((c>a) && (c>b)) {
+        largest = c;
+        cout << "Largest is " << largest << endl;
     }
 
+    return 0;
 
-    // Problem 4
+    // Project - 4
     int a, b;
     cin >> a >> b;
 
-    if ( a % b == 0){
+    if (a%b==0) {
         cout << a << " is divisible by " << b << endl;
-    } else {
+    } else if (a%b!=0) {
         cout << a << " is not divisible by " << b << endl;
-    }
-    return 0;
-
-    // Problem 5
-    int year;
-    cout << "Enter a year: " << endl;
-    cin >> year;
-
-    if (year % 4 == 0) {
-        if (year % 100 == 0) {
-            if (year % 400 == 0) {
-                cout << "It is a leap year" << endl;
-            } else {
-                cout << "It is not a leap year" << endl;
-            }
-        } else {
-            cout << "It is not a leap year" << endl;
-        }
-    } else {
-        cout << "It is not a leap year" << endl;
-    }
 
     return 0;
     
-    Problem 6
+    // Project -5
+    int year;
+    cin >> year;
+
+    if ((year%4==0) && (year%100==0) && (year%400==0)) {
+        cout << year << " is a leap year" << endl;
+    } else {
+        cout << year << " is not a leap year" << endl;
+    }
+
+    return 0;
+
+    // Project - 6
     float a, b, c;
     cin >> a >> b >> c;
 
-    float discr = (b*b) - 4 * a * c;
-    float x1 = (-b + pow(discr, 0.5))/(2*a);
-    float x2 = (-b - pow(discr, 0.5))/(2*a);
-
-    cout << "x1=" << x1 << endl;
-    cout << "x2=" << x2 << endl;
-
-    return 0;
-
+    float discriminant = (b*b) - (4 * a * c);
     
-    // Problem 7
+    float x1 = ((-b + sqrt(discriminant))/(2*a));
+    float x2 = ((-b - sqrt(discriminant))/(2*a));
+
+    cout << "x1 equals to: " << x1 << endl;
+    cout << "x2 equals to: " << x2 << endl;
+
+    return 0;
+
+    // Project - 7
     int a, b, c;
-    cout << "a: " << endl;
-    cin >> a;
-    cout << "b: " << endl;
-    cin >> b;
-    cout << "c: " << endl;
-    cin >> c;
+    cin >> a >> b >> c;
 
-    if ((a+b>c) and (a+c>b) and (b+c>a)) {
-        cout << "Triangle can be formed" << endl;
+    if (((a+b) > c) && ((a+c) > b) && ((b+c)  > a)) {
+        cout << "The triangle is valid" << endl;
     } else {
-        cout << "Trianlge cannot be formed" << endl;
+        cout << "The triangle is not valid" << endl;
     }
 
     return 0;
 
-    // Problem 8
-    char firstChar;
-    cout << "Enter a character: ";
-    cin >> firstChar;
-    if ((isupper(firstChar)) and isalpha(firstChar)) {
-        cout << "It is uppercase and alphabetic" << endl;
+    // Project - 8
+    char userChar;
+    cin >> userChar;
+
+    if (userChar >= 'A' && userChar <= 'Z') {
+        cout << "Uppercase letter\n" << endl;
+    } else if (userChar >= 'a' && userChar <= 'z') {
+        cout << "Lowercase letter\n" << endl;
+    } else {
+        cout << "Not an alphabet\n" << endl;
     }
-    if ((islower(firstChar)) and isalpha(firstChar)) {
-        cout << "It is lowercase and alphabetic" << endl;
-    }
-    if (isalpha(firstChar) == false) {
-        cout << "It is not alphabetic" << endl;
-    }
+
     return 0;
 
-    // Problem 9
+    // Project - 9
     int speed;
-    cout << "Enter a speed: " << endl;
     cin >> speed;
 
-    if (speed < 20) {
+    if (speed<20) {
         cout << "Too slow" << endl;
     } else if (speed > 80) {
         cout << "Too fast" << endl;
     } else {
         cout << "Just right" << endl;
     }
-
+    
     return 0;
 
-    // Problem 10
-    float x1 = 0;
-    float y1 = 0;
-    float x2, y2;
+    // Project - 10
+    int x1 = 0;
+    int y1 = 0;
+    int x2, y2;
     cin >> x2 >> y2;
+    int radius = 10;
 
-    float distance = (pow(((pow((x2 - x1),2)) + (pow((y2 - y1),2))),0.5));
 
-    if (distance < 10) {
-        cout << "The point is within a circle" << endl;
-    } else if (distance = 0) {
-        cout << "The point is within a circle" << endl;
+    float distance = sqrt((pow((x2-x1),2)) + (pow((y2-y1),2)));
+
+    if ((distance < 10) || (distance = 0)) {
+        cout << "Point (" << x2 << "," << y2 << ") is in circle" << endl;
     } else {
-        cout << "The point is not within a circle" << endl;
+        cout << "Point (" << x2 << "," << y2 << ") is not in circle" << endl;
     }
 
     return 0;
 
+    // Project - 11
 
-    // Problem 11
-    float weight;
-    float price;
+    // Package - 1
+    float weight1, price1;
+    cin >> weight1 >> price1;
+    // Package - 2
+    float weight2, price2;
+    cin >> weight2 >> price2;
 
-    float weight2;
-    float price2;
+    float total_price1 = (weight1/price1);
+    float total_price2 = (weight2/price2);
 
-    // // Package 1
-    cout << "[p1] Enter a weight: " << endl;
-    cin >> weight;
-    cout << "[p1] Enter a price: " << endl;
-    cin >> price;
-
-    // Package 2
-    cout << "[p2] Enter a weight: " << endl;
-    cin >> weight2;
-    cout << "[p2] Enter a price: " << endl;
-    cin >> price2;
-
-    double pack1 = weight / price;
-    double pack2 = weight2 / price2;
-
-    if (pack1 > pack2) {
-        cout << "Package 1 is cheaper" << endl;
-    } else if (pack1 < pack2) {
-        cout << "Package 2 is cheaper" << endl;
-    } else {
-        cout << "Both packages have the same prices" << endl;
+    if (total_price1>total_price2) {
+        cout << "Package 1 has a better price" << endl;
+    } else if (total_price2>total_price1) {
+        cout << "Package 2 has a better price" << endl;
+    } else if (total_price1==total_price2) {
+        cout << "Two packages have the same price." << endl;
     }
 
     return 0;
 
-    // Problem 12
-    int num;
-    cout << "Enter 3-digit number: " << endl;
-    cin >> num;
-    string reversed = "";
-    string num_str = to_string(num);
-
-    reversed += num_str[2];
-    reversed += num_str[1];
-    reversed += num_str[0];
-
-    if (num_str == reversed) {
-        cout << "It is a palindrom number" << endl;
-    } else {
-        cout << "it is not a palindrom number" << endl;
-    }
-    return 0;
-
-    // Problem 13
-
-    char user_input;
-
-    cout << "Enter a command ('g' OR 'y' OR 'r'): " << endl;
-    cin >> user_input;
-
-    if (user_input == 'g') {
-        cout << "Go!" << endl;
-    } else if (user_input == 'y') {
-        cout << "Get ready!" << endl;
-    } else if (user_input == 'r') {
-        cout << "Stop!" << endl;
-    } else {
-        cout << "You didn't enter any available commands. Program stopped. Please re-run" << endl;
-    }
-
-    return 0;
-
-    // Problem 14
-    vector<string> weekdays = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
-    int day_request;
-    cout << "Enter day number of week: " << endl;
-    cin >> day_request;
-    
-    int daynum = day_request - 1;
-
-    if (daynum > 6) {
-        cout << "There is no such a day" << endl;
-    } else {
-        cout << weekdays[daynum] << endl;
-    }
-    return 0;
-
-    // Problem 15
-    vector<string> weekdays = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
-    
-    int day_request;
-    int future;
-    
-    cout << "Enter current day number of week: " << endl;
-    cin >> day_request;
-    cout << "Enter future date elapsed from today: " << endl;
-    cin >> future;
-    
-    int daynum = day_request - 1;
-    int futnum = (day_request - 1) + future;
-
-    cout << "Current day is: " << weekdays[daynum] << endl;
-    cout << "Future day is: " << weekdays[futnum%7] << endl;
-
-    return 0;
-    
-    // Problem 16
-    int student_grade;
-    cout << "Enter your grade: " << endl;
-    cin >> student_grade;
-
-    if (student_grade >= 90 && student_grade <= 100) {
-        cout << "Grade: A" << endl;
-    } else if (student_grade >= 80 && student_grade <= 89) {
-        cout << "Grade: B" << endl;
-    } else if (student_grade >= 70 && student_grade <= 79) {
-        cout << "Grade: C" << endl;
-    } else if (student_grade >= 60 && student_grade <= 69) {
-        cout << "Grade: D" << endl;
-    } else {
-        cout << "Grade: F" << endl;
-    }
-    return 0;
-
-    // Problem 17
-    int just_number;
+    // Project - 12
+    int num, original, reversed = 0, digit;
     cout << "Enter a number: " << endl;
-    cin >> just_number;
+    cin >> num;
 
-    int category;
+    original = num;
 
-    if (just_number==0) {
-        category = 0;
-    } else if (just_number>=0) {
-        category = 1;
-    } else if (just_number<=1) {
-        category = -1;
+    while (num>0) { // num=121 // num = 12.1 // num = 1.21
+        digit = num % 10; // digit = 1 // digit = 2 // digit = 1.21
+        reversed = reversed * 10 + digit; // reversed = 1 // reversed = 12 // reversed = 121 == > reversed = 121;
+        num /= 10; // num = 12.1 // num = 1.21 //  // num = 0.121 ==> while breaks.
     }
 
-    switch (category) {
-        case (-1):
-            cout << "It is negative" << endl;
-            break;
-        case 0:
-            cout << "It is zero" << endl;
-            break;
-        case 1:
-            cout << "It is positive" << endl;
-            break;
+    if (original == reversed) {
+        cout << "Palyndrome" << endl;
+    } else if (original != reversed) {
+        cout << "Not Palyndrme" << endl;
     }
 
     return 0;
 
-    // Problem 18
-    string message;
-    cout << "u - Uzbek\ne - English\nr - Russian\ng - German\nChoose a language: ";
-    cin >> message;
+    // Project - 13
+    char userChar;
+    cin >> userChar;
 
-    if (message=="u" || message=="U") {
-        cout << "Assalomu aleykum!" << endl;
-    } else if (message == "e" || message=="E") {
-        cout << "Hi!" << endl;
-    } else if (message == "r" || message=="R") {
-        cout << "Привет!" << endl;
-    } else if (message == "g" || message=="G") {
-        cout << "Hallo!" << endl;
-    } else {
-        cout << "I don't know this language. Try again with available ones!" << endl;
+    if (userChar == 'g' || userChar == 'G') {
+        cout << "Go!" << endl;
+    } else if (userChar == 'y' || userChar == 'Y') {
+        cout << "Get ready!" << endl;
+    } else if (userChar == 'r' || userChar == 'R') {
+        cout << "Stop!" << endl;
     }
-    return 0;
-    
-    // Problem 19 - v1
-    float weight;
-    cout << "Enter a weight (maximum 20kg):" << " " << endl;
-    cin >> weight;
 
-    if (weight > 0 && weight <=1) {
-        cout << "3500 UZS" << endl;
-    } else if (weight > 1 && weight <= 3) {
-        cout << "5500 UZS" << endl;
-    } else if (weight > 3 && weight <= 10) {
-        cout << "8500 UZS" << endl;
-    } else if (weight > 10 && weight <= 20) {
-        cout << "10500 UZS" << endl;
-    } else if (weight == 0 && weight < 0) {
-        cout << "Invalid input" << endl;
-    } else if (weight > 20) {
-        cout << "The package cannot be shipped";
-    } else {
-        cout << "Enter a weight!" << endl;
-    }
     return 0;
 
-    // Problem 19 - v2
-    float weight;
-    cout << "Enter a weight (maximum 20kg):" << " " << endl;
-    cin >> weight;
-    int condition;
+    // Project - 14
+    int day_num;
+    cout << "Enter a day number (1-7): " << endl;
+    cin >> day_num;
 
-    // *
-    // Invalid  = 0
-    // Cannot be shipped = 1
-    // 3500 = 2
-    // 5500 = 3
-    // 8500 = 4
-    // 10500 = 5
-    
+    switch (day_num) {
+        case 1: cout << "Monday"; break;
+        case 2: cout << "Tuesday"; break;
+        case 3: cout << "Wednesday"; break;
+        case 4: cout << "Thursday"; break;
+        case 5: cout << "Friday"; break;
+        case 6: cout << "Saturday"; break;
+        case 7: cout << "Sunday"; break;
+    }
 
-    if (weight > 0 && weight <=1) {
-        condition = 2;
-    } else if (weight > 1 && weight <= 3) {
-        condition = 3;
-    } else if (weight > 3 && weight <= 10) {
-        condition = 4;
-    } else if (weight > 10 && weight <= 20) {
-        condition = 5;
-    } else if (weight == 0 && weight < 0) {
-        condition = 0;
-    } else if (weight > 20) {
+    return 0;
+
+    // Project - 15
+    int today, after;
+    cin >> today >> after;
+
+    int future = (today + after) % 7;
+
+    cout << "Today is ";
+    switch (today) {
+        case 0: cout << "Sunday\n"; break;
+        case 1: cout << "Monday\n"; break;
+        case 2: cout << "Tuesday\n"; break;
+        case 3: cout << "Wednesday\n"; break;
+        case 4: cout << "Thursday\n"; break;
+        case 5: cout << "Friday\n"; break;
+        case 6: cout << "Saturday\n"; break;
+        case 7: cout << "Sunday\n"; break;
+    }
+
+    cout << "Future date is ";
+    switch (future) {
+        case 0: cout << "Sunday\n"; break;
+        case 1: cout << "Monday\n"; break;
+        case 2: cout << "Tuesday\n"; break;
+        case 3: cout << "Wednesday\n"; break;
+        case 4: cout << "Thursday\n"; break;
+        case 5: cout << "Friday\n"; break;
+        case 6: cout << "Saturday\n"; break;
+        case 7: cout << "Sunday\n"; break;
+    }
+
+    return 0;
+
+    // Project - 16
+    int grade;
+    cin >> grade;
+    int result;
+
+    if ((grade>90) && (grade<100)) {
+        result = 5;
+    } else if ((grade>80) && (grade<89)) {
+        result = 4;
+    } else if ((grade>70) && (grade<79)) {
+        result = 3;
+    } else if ((grade>60) && (grade<69)) {
+        result = 2;
+    } else if ((grade>0) && (grade<59)) {
+        result = 1;
+    }
+
+    switch(result) {
+        case 5: cout << "A" << endl; break;
+        case 4: cout << "B" << endl; break;
+        case 3: cout << "C" << endl; break;
+        case 2: cout << "D" << endl; break;
+        case 1: cout << "F" << endl; break;
+    }
+
+    return 0;
+
+    // Project - 17
+
+    int num, condition;
+    cin >> num;
+
+    if (num>0) {
         condition = 1;
-    } 
-
-    switch (condition) {
-        case 0:
-            cout << "Invalid input" << endl;
-            break;
-        case 1:
-            cout << "Cannot be shipped" << endl;
-            break;
-        case 2:
-            cout << "3500 UZS" << endl;
-            break;
-        case 3:
-            cout << "5500 UZS" << endl;
-            break;
-        case 4:
-            cout << "8500 UZS" << endl;
-            break;
-        case 5:
-            cout << "10500 UZS" << endl;
-            break;
+    } else if (num < 0) {
+        condition = 2;
+    } else if (num == 0) {
+        condition = 3;
     }
+
+    switch(condition) {
+        case 1: cout << "Positive" << endl; break;
+        case 2: cout << "Negative" << endl; break;
+        case 3: cout << "Zero" << endl; break;
+    }
+
     return 0;
 
-    // Problem 20
-    int digit;
-    cout << "Enter a digit: " << endl;
-    cin >> digit;
+    char langChoose;
+    cin >> langChoose;
+
+    switch (langChoose) {
+        case 'u': cout << "Assalomu aleykum!" << endl; break;
+        case 'U': cout << "Assalomu aleykum!" << endl; break;
+
+        case 'e': cout << "Hello!" << endl; break;
+        case 'E': cout << "Hello!" << endl; break;
+
+        case 'r': cout << "Привет!" << endl; break;
+        case 'R': cout << "Привет!" << endl; break;
+
+        case 'g': cout << "Halo!" << endl; break;
+        case 'G': cout << "Halo!" << endl; break;
+    }
+
+    return 0;
+
+
+    // Project - 19
+
+    float weight;
+    cin >> weight;
     int condition;
 
-    if (digit >= 0 && digit < 10) {
-        condition = digit;
-    } else {
-        condition = 999;
-        cout << "It is not a digit" << endl;
-    }
-
-    switch (condition) {
-        case 0:
-            cout << "Zero" << endl;
-            break;
-        case 1:
-            cout << "One" << endl;
-            break;
-        case 2:
-            cout << "Two" << endl;
-            break;
-        case 3:
-            cout << "Three" << endl;
-            break;
-        case 4:
-            cout << "Four" << endl;
-            break;
-        case 5:
-            cout << "Five" << endl;
-            break;
-        case 6:
-            cout << "Six" << endl;
-            break;
-        case 7:
-            cout << "Seven" << endl;
-            break;
-        case 8:
-            cout << "Eight" << endl;
-            break;
-        case 9:
-            cout << "Nine" << endl;
-            break;
+    // program - 1
+    if ((weight>0) && (weight<1) && (weight=1)) {
+        cout << "3500" << endl;
+    } else if ((weight>1) && (weight<3) && (weight=3)) {
+        cout << "5500" << endl;
+    } else if ((weight>3) && (weight<10) && (weight=10)) {
+        cout << "8500" << endl;
+    } else if ((weight>10) && (weight<20) && (weight=20)) {
+        cout << "10500" << endl;
+    } else if ((weight<0) && (weight==0)) {
+        cout << "Invalid input" << endl;
+    } else if (weight>20) {
+        cout << "The package cannot be shipped" << endl;
     }
     return 0;
 
-    // Problem 21
-    // Holidays months only: 1,3,9,10,12
-    // No holidays: the rest.
+    // Program - 2
+    if ((weight>0) && (weight<1) && (weight=1)) {
+        condition = 1;
 
-    // Jan 1 - New Year's
-    // Jan 14 - Day of Defenders
-    // March 8 - International Womens' Day
-    // March 21 - Navruz
-    // May 9 - Day of Remembrance 
-    // Sep 1 - Independence day
-    // Oct 1 - Teacher's Day
-    // Dec 8 - Constitution Day
+    } else if ((weight>1) && (weight<3) && (weight=3)) {
+        condition = 2;
 
+    } else if ((weight>3) && (weight<10) && (weight=10)) {
+        condition = 3;
+
+    } else if ((weight>10) && (weight<20) && (weight=20)) {
+        condition = 4;
+
+    } else if ((weight<0) && (weight==0)) {
+        condition = 5;
+
+    } else if (weight>20) {
+        condition = 6;
+    }
+
+    switch (condition) {
+        case 1: cout << "3500" << endl; break;
+        case 2: cout << "5500" << endl; break;
+        case 3: cout << "8500" << endl; break;
+        case 4: cout << "10500" << endl; break;
+        case 5: cout << "Invalid input" << endl; break;
+        case 6: cout << "The package cannot be shipped" << endl; break;
+    }
+
+    return 0;
+
+    // Project - 20
+    int digit;
+    cin >> digit;
+
+    if (digit>9) {
+        cout << "it is not a digit" << endl;
+    }
+    
+    switch(digit) {
+        case 0: cout << "Zero" << endl; break;
+        case 1: cout << "One" << endl; break;
+        case 2: cout << "Two" << endl; break;
+        case 3: cout << "Three" << endl; break;
+        case 4: cout << "Four" << endl; break;
+        case 5: cout << "Five" << endl; break;
+        case 6: cout << "Six" << endl; break;
+        case 7: cout << "Seven" << endl; break;
+        case 8: cout << "Eight" << endl; break;
+        case 9: cout << "Nine" << endl; break;
+    }
+
+    return 0;
+
+    // Project - 21
     int month;
-    cout << "Enter a month number (1-12): " << endl;
+    cout << "Enter a month ( 1 - 12 ): ";
     cin >> month;
 
-    if (month==0 || month < 0) {
-        cout << "Please enter month number from 1 to 12!" << endl;
-    } else if (month==1) {
-        cout << "Jan 1: New Year's Day\nJan 14: Day of Defenders of the Motherland" << endl;
-    } else if (month==3) {
-        cout << "March 8: International Womens' Day\nMarch 21 - Navruz" << endl;
-    } else if (month==9) {
-        cout << "Sep 1: Independence Day" << endl;
-    } else if (month==10) {
-        cout << "Oct 1: Teacher's Day" << endl;
-    } else if (month==12) {
-        cout << "Dec 8: Constitution Day" << endl;
-    } else {
-        cout << "There is no any Uzbek holiday in this month.";
+    switch (month) {
+        case 1: cout << "Jan 1 - New Year's Day\nJan 14 - Defenders' Day" << endl; break;
+        case 2: cout << "There is no holidy in this month" << endl; break;
+        case 3: cout << "Mar 8 - Women's Day\n Mar 21 - Navruz" << endl; break;
+        case 4: cout << "April - Ramadan Hayit" << endl; break;
+        case 5: cout << "May 9 - Day of Memory and Honor" << endl; break;
+        case 6: cout << "There is no holidy in this month" << endl; break;
+        case 7: cout << "Jul - Kurban Hayit" << endl; break;
+        case 8: cout << "There is no holidy in this month" << endl; break;
+        case 9: cout << "Sep 1 - Independence Day" << endl; break;
+        case 10: cout << "Oct 1 - Teachers' Day" << endl; break;
+        case 11: cout << "There is no holidy in this month" << endl; break;
+        case 12: cout << "Dec 8 - Constitution Day" << endl; break;
+        case 0: cout << "It is zero. Nothing." << endl; break;
     }
+
     return 0;
+
+    // Project - 22
+
+    int userGuess;
+    bool even, odd;
+    cout << "Guess even or odd: ( 1 - even, 0 - odd): " << endl;
+    cin >> userGuess;
+
+    srand(time(0));
+    int random = rand();
+
+    cout << "Random number generated: " << random << endl;
+
+    if (random % 2 == 0) {  // even number
+        cout << "It is even. ";
+        if (userGuess == 1) {
+            cout << "You are correct!" << endl;
+        } else {
+            cout << "You are incorrect!" << endl;
+        }
+    } else {  // odd number
+        cout << "It is odd. ";
+        if (userGuess == 0) {
+            cout << "You are correct!" << endl;
+        } else {
+            cout << "You are incorrect!" << endl;
+        }
+    }
+
+    return 0;
+
+    // Project - 23
+
+    srand(time(0));
+
+    int random_rank = rand() % 13 + 1;
+
+    switch (random_rank) {
+        case 1: cout << "Ace "; break;
+        case 2: cout << "2 "; break;
+        case 3: cout << "3 "; break;
+        case 4: cout << "4 "; break;
+        case 5: cout << "5 "; break;
+        case 6: cout << "6 "; break;
+        case 7: cout << "7 "; break;
+        case 8: cout << "8 "; break;
+        case 9: cout << "9 "; break;
+        case 10: cout << "10 "; break;
+        case 11: cout << "Jack "; break;
+        case 12: cout << "Queen "; break;
+        case 13: cout << "King "; break;
+    }
+
+    int random_suit = rand() % 4 + 1;
+
+    switch (random_suit) {
+        case 1: cout << "Clubs" << endl; break;
+        case 2: cout << "Diamonds" << endl; break;
+        case 3: cout << "Hearts" << endl; break;
+        case 4: cout << "Spades" << endl; break;
+    }
+
+    return 0;
+
+    // Project - 24
+    srand(time(0));
+
+    int random = rand() % 99 - 10;
+    
+    int userNum;
+    cin >> userNum;
+
+    int randTens = random / 10;
+    int randOnes = random % 10;
+    int userTens = userNum / 10;
+    int userOnes = userNum % 10;
+    
+
+    if ( ((randTens==userTens) && (randOnes==userOnes)) || ((randTens==userOnes) && (randOnes==userTens)) ) {
+        cout << "100%" << endl;
+        cout << random;
+    } else if ( ((randTens==userTens) || (randOnes==userOnes)) || ((randTens==userOnes) || (randOnes==userTens)) ) {
+        cout << "50%" << endl;
+    } else {
+        cout << "0%" << endl;
+    }
+
+    return 0;
+
 }
